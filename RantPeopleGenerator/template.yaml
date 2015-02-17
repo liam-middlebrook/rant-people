@@ -1,0 +1,9 @@
+name: [get:FirstName] [get:LastName]
+blog: http://[get:nick].[get:tld]
+email: [get:nick]<noun.plural>@gmail.[get:tld]
+major: <noun.plural> <verb> [n:1600;2050]
+handle: [get:nick]
+forges:
+  <noun-animal>Hub: https://github.com/[get:nick]-[n:10;99]
+bio: I like working on <adj> <noun-animal>.
+[send:FirstName;<name>] [send:LastName;<noun><noun>] [send:nick;<adj><noun-animal>] [send:tld;<noun>]
