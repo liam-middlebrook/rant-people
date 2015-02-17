@@ -31,12 +31,16 @@ namespace RantPeopleGenerator
                     sr.Close();
                 }
             }
-            for (int i = 0; i < 3; i++)
+
+            if(!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "output")))
             {
-                Console.WriteLine(engine.Do(yamlTemplate)+"\n\n\n");
+                Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "output"));
             }
 
-            Console.ReadLine();
+            for (int i = 0; i < 3; i++)
+            {
+                File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "output", i + ".yaml"), engine.Do(yamlTemplate));
+            }
         }
     }
 }
